@@ -1,13 +1,12 @@
 // Your code goes here
 
 
-//add border on mouseover and remove on mouseout
+//add border on mouseover and remove on mouseout for all images
 const images = document.getElementsByTagName("img");
 Array.from(images).forEach(img => {
     img.addEventListener("mouseover", (e) => {
         img.style.borderStyle = "solid"
         img.style.borderWidth = "5px"
-        e.stopImmediatePropagation(); //stop bubbling through DOM
     })
     img.addEventListener("mouseout", (e) => {
         if(img.style.borderStyle == "solid"){ //don't remove border if the border is dashed
@@ -24,10 +23,15 @@ document.addEventListener("wheel", (e) => {
     funBus.style.color = "red";
 })
 
-//make img border dashed on double click
+//make img border dashed on double clicking the bus image
 const funnyBus = document.querySelector(".intro img");
 funnyBus.addEventListener("dblclick", (e) => {
     funnyBus.style.borderStyle = "dashed";
+    e.stopImmediatePropagation(); //stop bubbling through DOM
+})
+//this will not fire because of stopImmediatePropagation of dblclick event on target funnyBus
+funnyBus.addEventListener("dblclick", (e) =>{
+    funnyBus.style.borderStyle = "dotted";
 })
 
 //alert Hello! if user presses h key
@@ -36,7 +40,6 @@ document.addEventListener("keydown", (e) =>{
         alert("Hello!");
     }else{alert("try pressing h")};
 })
-
 
 
 //add picture to nav on page load
@@ -83,8 +86,6 @@ Array.from(images).forEach(img => {
         document.body.style.backgroundColor = "purple";
     })
 });
-
-
 
 
 
