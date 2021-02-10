@@ -34,8 +34,9 @@ funnyBus.addEventListener("dblclick", (e) => {
 document.addEventListener("keydown", (e) =>{
     if(e.key === "h"){
         alert("Hello!");
-    }
+    }else{alert("try pressing h")};
 })
+
 
 
 //add picture to nav on page load
