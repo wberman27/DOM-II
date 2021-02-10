@@ -67,7 +67,21 @@ Array.from(navBarLinks).forEach(link => {
     });
 });
 
+//flicker the nav background color on resize
+window.addEventListener("resize", (e) =>{
+    setInterval(() =>{
+        if(navBar.style.backgroundColor === "grey"){
+        navBar.style.backgroundColor = "white"
+    }else {navBar.style.backgroundColor = "grey"}
+    }, 1000)
+})
 
+//make background purple on img drag
+Array.from(images).forEach(img => {
+    img.addEventListener("dragstart", (e) => {
+        document.body.style.backgroundColor = "purple";
+    })
+});
 
 
 
